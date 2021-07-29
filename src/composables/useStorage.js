@@ -9,8 +9,8 @@ const useStorage = () => {
     const url = ref(null);
     const filePath = ref(null);
 
-    const ulpoadImage = async (file) => {
-        filePath.value = `cover/${user.value.uid}/${file.name}`;
+    const uploadImage = async (file) => {
+        filePath.value = `covers/${user.value.uid}/${file.name}`;
         const storageRef = storage.ref(filePath.value);
 
         try {
@@ -22,7 +22,7 @@ const useStorage = () => {
         }
     };
 
-    return { error, url, filePath, ulpoadImage };
+    return { error, url, filePath, uploadImage };
 };
 
 export default useStorage;
